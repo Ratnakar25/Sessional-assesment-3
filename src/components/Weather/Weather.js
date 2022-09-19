@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './Weather.css'
 
@@ -7,7 +7,7 @@ import {WiDayShowers} from 'react-icons/wi'
 
 function App() {
   const [data, setData] = useState({})
-  const [location, setLocation] = useState('')
+  const [location, setLocation] = useState('Chandigarh')
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=895284fb2d2c50a520ea537456963d9c`
 
@@ -21,9 +21,13 @@ function App() {
     }
   }
 
+  useEffect(() => {
+    searchLocation({key:"Enter"})
+  },[])
+
   return (
     <div className="weatherApp">
-      <div className="search " style={{justifyItems:'center'} }>
+      <div className="search "  style={{justifyItems:'center'} }>
       
           <h2>Check the weather of your desired locations.  <WiDayShowers fontSize={'2.5rem'} /></h2>
         <input
@@ -31,7 +35,7 @@ function App() {
           onChange={event => setLocation(event.target.value)}
           onKeyPress={searchLocation}
           placeholder='Enter Location'
-           />
+        />
 
       </div>
       <div className="containerr" >

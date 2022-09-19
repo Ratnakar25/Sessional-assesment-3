@@ -3,7 +3,7 @@
   width: 100%;
   height: fit-content;
   position: relative;
-  background: linear-gradient(to bottom, #0066cc 0%, #0099ff 100%);
+  background: linear-gradient(to top, #33ccff 0%, #5651e5 100%);
   
 }
 #weather {
@@ -34,6 +34,7 @@
   border-radius: 25px;
   border: 1px solid rgba(255,255,255, 0.8);
   color: #201e1e;
+  margin-top: 30px;
 }
 
 ::placeholder {
